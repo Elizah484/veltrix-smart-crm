@@ -1,0 +1,28 @@
+# secrets and local config
+.env
+*.env.local
+
+# dependencies and builds
+node_modules/
+dist/
+build/
+
+# data that must never be committed
+backups/
+*.sql.bak
+
+# logs and OS/editor files
+*.log
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+
+# protect all environment files
+.env.*
+!.env.example
+
+# nested dependencies and build folders
+**/node_modules/
+**/dist/
+**/build/

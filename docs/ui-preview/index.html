@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Veltrix CRM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app"></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+  <div id="modal-root"></div>
+
+  <!-- Scripts share one global scope, so keep this order. -->
+  <script src="js/01-utils-and-sample-data.js"></script>
+  <script src="js/02-rules-and-charts.js"></script>
+  <script src="js/03-layout-router-dashboard.js"></script>
+  <script src="js/04-customers.js"></script>
+  <script src="js/05-interactions-follow-ups-orders.js"></script>
+  <script src="js/06-reports-audit-users-settings-start.js"></script>
+</body>
+</html>

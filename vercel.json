@@ -3,17 +3,12 @@
   "services": {
     "client": {
       "root": "client",
-      "framework": "vite",
-      "rewrites": [
-        {
-          "source": "/(.*)",
-          "destination": "/index.html"
-        }
-      ]
+      "framework": "vite"
     },
     "server": {
       "root": "server",
-      "framework": "express"
+      "framework": "express",
+      "entrypoint": "server.js"
     }
   },
   "rewrites": [

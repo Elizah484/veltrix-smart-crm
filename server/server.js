@@ -68,4 +68,8 @@ process.on('unhandledRejection', (reason) => {
   console.error('Unhandled promise rejection: ' + (reason && reason.message ? reason.message : reason));
 });
 
-start();
+// Vercel imports this Express app as a serverless function. Keep the listener
+// and recurring reminder worker for local development only.
+if (require.main === module) start();
+
+module.exports = app;

@@ -3,12 +3,22 @@
 const mysql = require('mysql2/promise');
 const { config } = require('./env');
 
+// TiDB Cloud Starter requires TLS for public connections. Keep local MySQL
+// development connections unchanged, and verify the remote server certificate.
+const isLocalDatabase = ['127.0.0.1', 'localhost', '::1'].includes(config.db.host);
+
 const pool = mysql.createPool({
   host: config.db.host,
   port: config.db.port,
   user: config.db.user,
   password: config.db.password,
   database: config.db.database,
+  ...(isLocalDatabase ? {} : {
+    ssl: {
+      minVersion: 'TLSv1.2',
+      rejectUnauthorized: true,
+    },
+  }),
   charset: 'utf8mb4',
   waitForConnections: true,
   connectionLimit: 10,
